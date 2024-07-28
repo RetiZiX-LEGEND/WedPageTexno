@@ -1,0 +1,58 @@
+html, body {
+    font-family: 'Dongle', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+:root {
+    --color-bg1: #dff9fb;
+    --color-bg2: #ffffff;
+    --text-color: #000000;
+}
+
+h1, h2, h3, p, ul li {
+    color: var(--text-color);
+    transition: color 0.5s ease-in-out;
+}
+
+.gradient-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Анимация изменения цвета текста */
+@keyframes colorChange {
+    0% { color: #ff6347; }
+    25% { color: #ff4500; }
+    50% { color: #32cd32; }
+    75% { color: #1e90ff; }
+    100% { color: #ff6347; }
+}
+
+/* Применение анимации при наведении */
+h1:hover, h2:hover, h3:hover, p:hover, ul li:hover {
+    animation: colorChange 2s infinite;
+}
+
+/* Стили для iframe */
+iframe {
+    display: block;
+    margin: 40px auto;
+    border: none;
+    width: 80%;
+    height: 450px;
+}
